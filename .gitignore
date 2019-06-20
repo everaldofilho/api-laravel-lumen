@@ -1,5 +1,5 @@
-/vendor
-/.idea
+/projeto/vendor
+/projeto/.idea
 Homestead.json
 Homestead.yaml
-.env
+*.env
