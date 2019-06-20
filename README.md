@@ -5,7 +5,14 @@ Criado este projeto somente para testar e conhecer melhor como funciona desenvol
 - PHP 7.^
 - Composer
 
+## Estrutura de pastas
+
+- cli -> Comandos sh atalhos
+- api -> Framework Laravel
+
 ## Instalação
+
+    Execute todos os comandos abaixo dentro da pasta api
 
 Instalação dos pacotes:
 
