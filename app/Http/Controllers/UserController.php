@@ -24,7 +24,7 @@ class UserController extends Controller
 
         if ($user && Hash::check($request->input('senha'), $user->senha)) {
             $apikey = base64_encode(str_random(40));
-            User::where('login', $request->input('login'))->update(['token' => "$apikey"]);;
+            User::where('email', $request->input('email'))->update(['token' => "$apikey"]);;
             return response()->json(['status' => 'success', 'token' => $apikey]);
         } else {
             return response()->json(['status' => 'fail'],401);
