@@ -1,0 +1,26 @@
+# v2 syntax
+version: '2'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: api-mysql
+    volumes:
+      - .data-mysql:/var/lib/mysql
+      - ./docker-mysql/:/docker-entrypoint-initdb.d
+    ports:
+      - "3308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=secret
+  app:
+    build:
+      context: ./docker-php
+    container_name: api-app
+    volumes:
+      - ./api:/var/www/html/
+    ports:
+      - "8081:80"
+    links:
+      - mysql
